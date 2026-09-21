@@ -11,6 +11,11 @@
   gtag('js', new Date());
   gtag('config', 'AW-16940335819');
 </script>
+<!-- Google Ads: conversao clique-para-ligar (AW-16940335819/OUtLCI-Hrf8cEMuF5I0_) -->
+<script>
+function gtag_report_call_conversion(){try{gtag('event','conversion',{'send_to':'AW-16940335819/OUtLCI-Hrf8cEMuF5I0_','value':1.0,'currency':'USD'});}catch(e){}}
+document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closest?ev.target.closest('a[href^="tel:"]'):null;if(a){gtag_report_call_conversion();}},true);
+</script>
 <title>Kitchen Remodeling in Wakefield, MA | Innov Builders</title>
 <meta name="description" content="Local kitchen remodelers in Wakefield and North Boston. Licensed, insured, 780+ projects. Free in-home estimate and real before and afters.">
 <meta name="robots" content="index, follow">
@@ -1850,7 +1855,7 @@ document.getElementById('modalConfirm').addEventListener('click', async function
     PLATAFORMA: 'GOOGLE', FONTE: getSource(), page_url: window.location.href, source: 'trafego (google lp)'
   });
   closeModal();
-  setTimeout(() => { window.location.href = CALL_NUMBER; }, 250);
+  try{gtag_report_call_conversion();}catch(e){} setTimeout(() => { window.location.href = CALL_NUMBER; }, 250);
 });
 modalPhone.addEventListener('keypress', e => { if (e.key === 'Enter') document.getElementById('modalConfirm').click(); });
 
