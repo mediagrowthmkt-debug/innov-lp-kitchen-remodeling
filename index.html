@@ -1707,7 +1707,7 @@ html,body{overflow-x:hidden;max-width:100%}
 document.documentElement.classList.add('js');
 
 // ---------- Lead flow (Make webhook) ----------
-const WEBHOOK_URL = 'https://hook.us2.make.com/50o9ws8g1czkyk475dj24lzz2p7ci5sa';
+const WEBHOOK_URL = 'https://mediagrowth-n8n.63kuy3.easypanel.host/webhook/innov-lp-google-lead';
 
 function detectPlatform(){
   const url = window.location.href.toLowerCase();
@@ -1753,7 +1753,7 @@ function initStepForm(form){
     var qualified=(own && own!=='Renter')?'Yes':'No';
     var btn=form.querySelector('[type=submit]');
     if(btn){btn.innerHTML='Sending...';btn.disabled=true;}
-    await sendToWebhook({NOME:fd.get('name'),EMAIL:fd.get('email'),TELEFONE:fd.get('phone'),PERGUNTA:fd.get('service'),QUALIFICACAO:own,QUALIFICADO:qualified,MENSAGEM:fd.get('message')||'',PLATAFORMA:detectPlatform(),FONTE:getSource(),QUANDO:new Date().toISOString()});
+    await sendToWebhook({name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),service:fd.get('service'),message:((fd.get('message')||'')+(own?' | Owner: '+own:'')+(qualified?' | Qualified: '+qualified:'')),PLATAFORMA:'GOOGLE',FONTE:getSource(),page_url:window.location.href,source:'trafego (google lp)'});
     window.location.href='thank-you.html';
   });
   show(0);
@@ -1837,9 +1837,9 @@ document.getElementById('modalConfirm').addEventListener('click', async function
     return;
   }
   await sendToWebhook({
-    NOME: '', EMAIL: '', TELEFONE: phone,
-    PERGUNTA: 'CALL - Floating Call Button',
-    PLATAFORMA: detectPlatform(), FONTE: getSource(), QUANDO: new Date().toISOString()
+    name: '', email: '', phone: phone,
+    service: 'CALL - Floating Call Button', message: 'Lead via clique-para-ligar (visitante pediu ligacao)', lead_type: 'call',
+    PLATAFORMA: 'GOOGLE', FONTE: getSource(), page_url: window.location.href, source: 'trafego (google lp)'
   });
   closeModal();
   setTimeout(() => { window.location.href = CALL_NUMBER; }, 250);
