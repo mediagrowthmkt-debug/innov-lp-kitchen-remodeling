@@ -1103,6 +1103,8 @@ html,body{overflow-x:hidden;max-width:100%}
 .grw-real b{color:var(--ink)}
 .grw-real svg{width:15px;height:15px;color:var(--gold);vertical-align:-2px}
 
+
+.lp-form-call{display:block;text-align:center;margin-top:16px;font-size:.95rem;color:var(--muted);text-decoration:none}.lp-form-call b{color:var(--text);white-space:nowrap}.lp-form-call:hover b{color:var(--gold)}.lp-callfab.show .fab-txt{max-width:240px!important;padding-right:22px!important;font-weight:700}
 </style>
 
 </head>
@@ -1189,6 +1191,7 @@ html,body{overflow-x:hidden;max-width:100%}
           </div>
           <div class="stepdone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Thank you! We received your request and will contact you shortly.</div>
         </form>
+        <a class="lp-form-call" href="tel:+19789193913">Prefer to talk? Call <b>+1 978-919-3913</b></a>
       </div>
     </div>
   </div>
@@ -1606,9 +1609,9 @@ html,body{overflow-x:hidden;max-width:100%}
 </footer>
 
 <!-- ============ FLOATING CALL ============ -->
-<button class="lp-callfab" id="callFab" aria-label="Call for a free estimate">
+<button class="lp-callfab" id="callFab" aria-label="Call +1 978-919-3913">
   <span class="fab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></span>
-  <span class="fab-txt">Get your free estimate</span>
+  <span class="fab-txt">+1 978-919-3913</span>
 </button>
 
 <!-- ============ ESTIMATE POPUP ============ -->
@@ -1653,20 +1656,6 @@ html,body{overflow-x:hidden;max-width:100%}
 </div>
 
 <!-- ============ PHONE-CAPTURE MODAL ============ -->
-<div class="qmodal" id="callModal">
-  <div class="qmodal-backdrop" data-close></div>
-  <div class="lp-modal-card">
-    <span class="eyebrow center">Before we call</span>
-    <h3>Leave your number</h3>
-    <p>We might be on a job site. Leave your phone number so we can reach you back if we miss your call.</p>
-    <input type="tel" id="modalPhone" placeholder="Enter your phone number" autocomplete="tel">
-    <div class="lp-modal-buttons">
-      <button class="btn btn--gold" id="modalConfirm">Call Now</button>
-      <button class="btn btn--ghost" data-close>Cancel</button>
-    </div>
-  </div>
-</div>
-
 <!-- ============ LIGHTBOX ============ -->
 <div class="pf2-lb" id="lightbox"><button class="pf2-lb-close" aria-label="Close">&times;</button><img class="pf2-lb-img" id="lbImg" src="" alt=""></div>
 
@@ -1774,42 +1763,14 @@ initStepForm(document.getElementById('modalForm'));
   vids.forEach(function(v){io.observe(v);});
 })();
 
-// ---------- Floating call + phone-capture modal ----------
+// ---------- Floating call: liga direto (sem pop-up) ----------
 const callFab = document.getElementById('callFab');
-const callModal = document.getElementById('callModal');
-const modalPhone = document.getElementById('modalPhone');
 const CALL_NUMBER = 'tel:+19789193913';
-
-function openModal(){
-  callModal.classList.add('open');
-  document.body.classList.add('qmodal-lock');
-  modalPhone.value = '';
-  setTimeout(() => modalPhone.focus(), 250);
-}
-function closeModal(){
-  callModal.classList.remove('open');
-  document.body.classList.remove('qmodal-lock');
-}
-if (callFab) callFab.addEventListener('click', openModal);
-callModal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
-
-document.getElementById('modalConfirm').addEventListener('click', async function(){
-  const phone = modalPhone.value.trim();
-  if (!phone || phone.replace(/\D/g,'').length < 10){
-    modalPhone.style.borderColor = '#d64545';
-    modalPhone.placeholder = 'Please enter a valid phone number';
-    modalPhone.focus();
-    return;
-  }
-  await sendToWebhook({
-    name: '', email: '', phone: phone,
-    service: 'CALL - Floating Call Button', message: 'Lead via clique-para-ligar (visitante pediu ligacao)', lead_type: 'call',
-    PLATAFORMA: 'GOOGLE', FONTE: getSource(), page_url: window.location.href, source: 'trafego (google lp)'
-  });
-  closeModal();
-  try{gtag_report_call_conversion();}catch(e){} setTimeout(() => { window.location.href = CALL_NUMBER; }, 250);
+if (callFab) callFab.addEventListener('click', function(){
+  try{gtag_report_call_conversion();}catch(e){}
+  try{mgCallClick('botão flutuante');}catch(e){}
+  setTimeout(function(){ window.location.href = CALL_NUMBER; }, 150);
 });
-modalPhone.addEventListener('keypress', e => { if (e.key === 'Enter') document.getElementById('modalConfirm').click(); });
 
 // reveal the floating label after 5s
 setTimeout(() => { if (callFab) callFab.classList.add('show'); }, 5000);
@@ -1898,5 +1859,31 @@ setTimeout(() => { if (callFab) callFab.classList.add('show'); }, 5000);
 </script>
 
 <script>(function(){var v=[].slice.call(document.querySelectorAll('video[data-poster]'));function s(x){if(x.dataset.poster){x.poster=x.dataset.poster;x.removeAttribute('data-poster');}}if(!('IntersectionObserver' in window)){v.forEach(s);return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){s(e.target);io.unobserve(e.target);}});},{rootMargin:'600px 0px'});v.forEach(function(x){io.observe(x);});})();</script>
+<script>
+/* Ligação pelas LPs do Google: registra a página/UTM/GCLID de cada clique em ligar (n8n guarda e a automação
+   de ligação do GHL grava na nota do contato quem ligou no (978) 919-3913). */
+(function(){
+  var K='mg_lp_attr', q=new URLSearchParams(location.search), a={};
+  try{a=JSON.parse(sessionStorage.getItem(K)||'{}');}catch(e){}
+  var keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'], tem=false;
+  keys.forEach(function(k){ if(q.get(k)){ a[k]=q.get(k); tem=true; } });
+  if(!a.landing_url || tem){ a.landing_url=location.href; a.referrer=document.referrer||''; }
+  try{sessionStorage.setItem(K,JSON.stringify(a));}catch(e){}
+  window.mgCallClick=function(botao){
+    var d={page_url:location.origin+location.pathname, page_title:document.title, button:botao,
+           device:/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?'celular':'computador'};
+    for(var k in a) d[k]=a[k];
+    var url='https://mediagrowth-n8n.63kuy3.easypanel.host/webhook/innov-lp-google-call-click', body=new URLSearchParams(d);
+    try{ if(navigator.sendBeacon && navigator.sendBeacon(url, body)) return; }catch(e){}
+    try{ fetch(url,{method:'POST',body:body,keepalive:true,mode:'no-cors'}); }catch(e){}
+  };
+  document.addEventListener('click',function(ev){
+    var el=ev.target&&ev.target.closest?ev.target.closest('a[href^="tel:"]'):null; if(!el) return;
+    var b=el.closest('.topbar')?'barra do topo':el.classList.contains('header-phone')?'cabeçalho':
+          el.classList.contains('lp-form-call')?'abaixo do formulário':el.closest('footer')?'rodapé':'link de telefone na página';
+    window.mgCallClick(b);
+  },true);
+})();
+</script>
 </body>
 </html>
