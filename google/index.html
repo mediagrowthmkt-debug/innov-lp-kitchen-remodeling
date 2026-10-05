@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) - Google Ads AW-16940335819 -->
-<script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=AW-16940335819';document.head.appendChild(s);}['scroll','touchstart','mousemove','keydown','click'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});addEventListener('load',function(){setTimeout(l,3500);});})();</script>
+<script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=AW-16940335819';document.head.appendChild(s);var c=document.createElement('script');c.async=true;c.src='https://www.clarity.ms/tag/vgd5tytc2u';document.head.appendChild(c);}['scroll','touchstart','mousemove','keydown','click'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});addEventListener('load',function(){setTimeout(l,3500);});})();</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-16940335819');
+  gtag('config', 'G-BW7MND80Z9');
+  window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments)};
 </script>
 <!-- Google Ads: conversao clique-para-ligar (AW-16940335819/OUtLCI-Hrf8cEMuF5I0_) -->
 <script>
@@ -1107,6 +1109,9 @@ html,body{overflow-x:hidden;max-width:100%}
 .lp-form-call{display:block;text-align:center;margin-top:16px;font-size:.95rem;color:var(--muted);text-decoration:none}.lp-form-call b{color:var(--text);white-space:nowrap}.lp-form-call:hover b{color:var(--gold)}.lp-callfab.show .fab-txt{max-width:240px!important;padding-right:22px!important;font-weight:700}
 </style>
 
+<!-- Analytics MG (2026-10-05): GA4 G-BW7MND80Z9 + Clarity vgd5tytc2u + eventos MG + FUNIL 1/2/3 Google Ads -->
+<script src="/mg-analytics.js" defer></script>
+<script src="/mg-funil-ads.js" defer></script>
 </head>
 <body>
 
@@ -1673,6 +1678,8 @@ function detectPlatform(){
 }
 function getSource(){ return document.title || 'Kitchen Remodeling LP'; }
 
+function mgSaveUD(fd){try{var e=String(fd.get('email')||'').trim().toLowerCase(),d=String(fd.get('phone')||'').replace(/\D/g,''),p='';if(d.length===10)p='+1'+d;else if(d.length===11&&d.charAt(0)==='1')p='+'+d;else if(d.length>=11)p='+'+d;var u={};if(e&&e.indexOf('@')>0)u.email=e;if(p)u.phone_number=p;sessionStorage.setItem('mg_ud',JSON.stringify(u));}catch(x){}}
+function mgLpAttr(){try{var a=JSON.parse(sessionStorage.getItem('mg_lp_attr')||'{}'),o={},q=new URLSearchParams(location.search);['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content','landing_url'].forEach(function(k){var v=q.get(k)||a[k];if(v)o[k]=v;});return o;}catch(e){return {};}}
 async function sendToWebhook(data){
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 8000);
@@ -1707,7 +1714,8 @@ function initStepForm(form){
     var fd=new FormData(form);
     var btn=form.querySelector('[type=submit]');
     if(btn){btn.innerHTML='Sending...';btn.disabled=true;}
-    await sendToWebhook({name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),service:fd.get('service'),message:(fd.get('message')||''),PLATAFORMA:'GOOGLE',FONTE:getSource(),page_url:window.location.href,source:'trafego (google lp)'});
+    mgSaveUD(fd);
+    await sendToWebhook(Object.assign({name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),service:fd.get('service'),message:(fd.get('message')||''),PLATAFORMA:'GOOGLE',FONTE:getSource(),page_url:window.location.href,source:'trafego (google lp)'},mgLpAttr()));
     window.location.href='thank-you.html';
   });
   show(0);
@@ -1865,7 +1873,7 @@ setTimeout(() => { if (callFab) callFab.classList.add('show'); }, 5000);
 (function(){
   var K='mg_lp_attr', q=new URLSearchParams(location.search), a={};
   try{a=JSON.parse(sessionStorage.getItem(K)||'{}');}catch(e){}
-  var keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'], tem=false;
+  var keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'], tem=false;
   keys.forEach(function(k){ if(q.get(k)){ a[k]=q.get(k); tem=true; } });
   if(!a.landing_url || tem){ a.landing_url=location.href; a.referrer=document.referrer||''; }
   try{sessionStorage.setItem(K,JSON.stringify(a));}catch(e){}

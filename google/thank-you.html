@@ -9,13 +9,17 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-16940335819');
+  gtag('config', 'AW-16940335819', {allow_enhanced_conversions: true});
+  gtag('config', 'G-BW7MND80Z9');
+  window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments)};
 </script>
 <!-- Google Ads: conversao clique-para-ligar (AW-16940335819/OUtLCI-Hrf8cEMuF5I0_) -->
 <script>
 function gtag_report_call_conversion(){try{gtag('event','conversion',{'send_to':'AW-16940335819/OUtLCI-Hrf8cEMuF5I0_','value':1.0,'currency':'USD'});}catch(e){}}
 document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closest?ev.target.closest('a[href^="tel:"]'):null;if(a){gtag_report_call_conversion();}},true);
 </script>
+<!-- Conversões otimizadas para leads: dados que a pessoa digitou no formulário (guardados no envio) -->
+<script>try{var mgUD=JSON.parse(sessionStorage.getItem('mg_ud')||'{}');if(mgUD.email||mgUD.phone_number){gtag('set','user_data',mgUD);}}catch(e){}</script>
 <!-- Event snippet for Paginas lp google (mediagrowth) conversion page -->
 <script>
   gtag('event', 'conversion', {
@@ -24,6 +28,9 @@ document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closes
       'currency': 'USD'
   });
 </script>
+<script>gtag('event','generate_lead',{lead_source:'lp_google_form',send_to:'G-BW7MND80Z9'});</script>
+<script async src="https://www.clarity.ms/tag/vgd5tytc2u"></script>
+<script src="/mg-analytics.js" defer></script>
 <title>Thank You | Innov Builders</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
