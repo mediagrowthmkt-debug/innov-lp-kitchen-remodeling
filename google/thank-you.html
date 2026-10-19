@@ -49,6 +49,22 @@ document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closes
 .ty-brand{margin-bottom:34px}
 .ty-brand img{height:46px;width:auto}
 </style>
+<!-- Meta Pixel 521005167435816 (Inov- Site): carrega atrasado igual ao gtag (não pesa no PageSpeed) -->
+<script>
+!function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];}(window);
+(function(){
+var ty=/thank-you/.test(location.pathname),d=0;
+function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(s);}
+if(ty){l();}else{['scroll','touchstart','mousemove','keydown','click'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});addEventListener('load',function(){setTimeout(l,3500);});}
+var h=location.hostname,cat=/kitchen/.test(h)?'kitchen':/addition/.test(h)?'addition':/bathroom/.test(h)?'bathroom':'other';
+function eid(){return 'lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);}
+fbq('init','521005167435816');fbq('track','PageView');
+if(ty){var id=null;try{id=sessionStorage.getItem('mg_fb_lead');sessionStorage.removeItem('mg_fb_lead');}catch(e){}fbq('track','Lead',{content_category:cat},{eventID:id||eid()});}
+else{fbq('track','ViewContent',{content_category:cat,content_name:document.title});
+document.addEventListener('submit',function(ev){var f=ev.target;if(!f||!f.checkValidity||!f.checkValidity())return;var id=eid();try{sessionStorage.setItem('mg_fb_lead',id);}catch(e){}fbq('track','Lead',{content_category:cat},{eventID:id});},true);}
+var lc=0;document.addEventListener('click',function(ev){var t=ev.target&&ev.target.closest?ev.target.closest('a[href^="tel:"],#callFab'):null;if(!t)return;var n=Date.now();if(n-lc<1500)return;lc=n;fbq('track','Contact',{content_category:cat});},true);
+})();
+</script>
 </head>
 <body>
 <section class="ty-wrap">

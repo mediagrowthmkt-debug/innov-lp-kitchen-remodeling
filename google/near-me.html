@@ -22,10 +22,11 @@ document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closes
 <meta name="description" content="Local kitchen remodelers in Wakefield and North Boston. Licensed, insured, 780+ projects. Free in-home estimate and real before and afters.">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="../assets/img/brand/logo-white.png">
-<link rel="canonical" href="https://innovbuildersusa.com/kitchen-remodeling-landing/">
+<link rel="canonical" href="https://kitchen.innovbuildersusa.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://kitchen.innovbuildersusa.com/">
 <meta property="og:title" content="Kitchen Remodeling in Wakefield, MA | Innov Builders">
 <meta property="og:description" content="Local kitchen remodelers in Wakefield and North Boston. Licensed, insured, 780+ projects. Free in-home estimate and real before and afters.">
 <meta property="og:image" content="../assets/img/portfolio/kitchen-remodeling-nahant-ma/after-02.webp">
@@ -1112,6 +1113,37 @@ html,body{overflow-x:hidden;max-width:100%}
 <!-- Analytics MG (2026-10-05): GA4 G-BW7MND80Z9 + Clarity vgd5tytc2u + eventos MG + FUNIL 1/2/3 Google Ads -->
 <script src="/mg-analytics.js" defer></script>
 <script src="/mg-funil-ads.js" defer></script>
+<!-- Meta Pixel 521005167435816 (Inov- Site): carrega atrasado igual ao gtag (não pesa no PageSpeed) -->
+<script>
+!function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];}(window);
+(function(){
+var ty=/thank-you/.test(location.pathname),d=0;
+function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(s);}
+if(ty){l();}else{['scroll','touchstart','mousemove','keydown','click'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});addEventListener('load',function(){setTimeout(l,3500);});}
+var h=location.hostname,cat=/kitchen/.test(h)?'kitchen':/addition/.test(h)?'addition':/bathroom/.test(h)?'bathroom':'other';
+function eid(){return 'lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);}
+fbq('init','521005167435816');fbq('track','PageView');
+if(ty){var id=null;try{id=sessionStorage.getItem('mg_fb_lead');sessionStorage.removeItem('mg_fb_lead');}catch(e){}fbq('track','Lead',{content_category:cat},{eventID:id||eid()});}
+else{fbq('track','ViewContent',{content_category:cat,content_name:document.title});
+document.addEventListener('submit',function(ev){var f=ev.target;if(!f||!f.checkValidity||!f.checkValidity())return;var id=eid();try{sessionStorage.setItem('mg_fb_lead',id);}catch(e){}fbq('track','Lead',{content_category:cat},{eventID:id});},true);}
+var lc=0;document.addEventListener('click',function(ev){var t=ev.target&&ev.target.closest?ev.target.closest('a[href^="tel:"],#callFab'):null;if(!t)return;var n=Date.now();if(n-lc<1500)return;lc=n;fbq('track','Contact',{content_category:cat});},true);
+})();
+</script>
+<style id="g17-copy">
+.stepq{display:block;font-weight:700;font-size:.95rem;color:var(--text);margin:0 0 8px}
+.lp-form-micro{margin:10px 0 0;font-size:.8rem;line-height:1.45;color:var(--muted);text-align:center}
+.lp-form-proof{margin:10px 0 0;text-align:center;font-size:.85rem}
+.lp-proof-link{color:#7a5a10;text-decoration:underline;text-underline-offset:3px}
+.lp-mbar{display:none}
+@media(max-width:768px){
+.lp-mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);box-shadow:0 -6px 20px rgba(0,0,0,.12)}
+.lp-mbar .lp-mbar-cta{flex:1;justify-content:center;text-align:center;padding:14px 10px;font-size:.95rem}
+.lp-mbar .lp-mbar-call{display:grid;place-items:center;width:52px;flex-shrink:0;border-radius:12px;background:#0A0A0A;color:#fff}
+.lp-mbar .lp-mbar-call svg{width:22px;height:22px}
+.lp-callfab{display:none!important}
+body{padding-bottom:78px}
+}
+</style>
 </head>
 <body>
 
@@ -1152,19 +1184,20 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="hero-inner">
       <div class="hero-content">
         <span class="eyebrow">Kitchen Remodeling · Wakefield, MA</span>
-        <h1>Expert Kitchen Remodeling <span class="gold-text">Near You in MA</span></h1>
-        <p class="lead">Licensed, insured, and trusted for 780+ remodels across North Boston. Get your free in-home estimate.</p>
+        <h1>Kitchen Remodeling Near You <span class="gold-text">in North Boston</span></h1>
+        <p class="lead">A fixed kitchen quote from a local, licensed crew. 780+ remodels across North Boston, owner involved in every project.</p>
         <div class="lp-hero-marquee" aria-hidden="true"><div class="lp-hero-marquee-track"><img src="../assets/img/lp/marquee/kitchen-001-666cf9.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-002-f881b6.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-004-2a5ee5.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-006-9626b1.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-010-b49c45.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-022-f61eb3.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-027-bc100b.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-028-2d3fda.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-029-99da29.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-036-0a11ed.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-001-666cf9.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-002-f881b6.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-004-2a5ee5.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-006-9626b1.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-010-b49c45.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-022-f61eb3.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-027-bc100b.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-028-2d3fda.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-029-99da29.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"><img src="../assets/img/lp/marquee/kitchen-036-0a11ed.webp" width="205" height="256" alt="Kitchen remodeling by Innov Builders" loading="lazy" decoding="async"></div></div>
         <div class="hero-badges">
-          <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Licensed &amp; Insured</b><br>HIC Registered in MA</span></div>
-          <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg><span><b>3-Year Warranty</b><br>On our workmanship</span></div>
+          <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Licensed &amp; Insured</b><br>HIC MA #212869</span></div>
+          <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg><span><b>Fixed Quote</b><br>No surprises</span></div>
+          <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg><span><b>4.9 Star Rated</b><br>On Google</span></div>
         </div>
-        <p class="hero-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Wakefield and North Boston homeowners for 11+ years</p>
+        <p class="hero-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Wakefield and North Boston homeowners</p>
       </div>
 
       <div class="lp-form-card">
-        <h2>Get Your Free Estimate</h2>
-        <p class="lp-form-sub">Start your kitchen transformation today, no pressure, no obligation.</p>
+        <h2>Get Your Fixed Kitchen Quote</h2>
+        <p class="lp-form-sub">Tell us what you want to change. We visit, measure and give you one fixed price. No pressure, no obligation.</p>
         <form class="stepform lp-stepform" id="heroForm" data-stepform novalidate>
           <div class="stepbar">
             <div class="stepdot active" data-dot="0"><span class="stepnum">1</span><span class="steplbl">Service</span></div>
@@ -1172,7 +1205,7 @@ html,body{overflow-x:hidden;max-width:100%}
             <div class="stepdot" data-dot="1"><span class="stepnum">2</span><span class="steplbl">Contact</span></div>
           </div>
           <div class="steppanel" data-step="0">
-            <label class="visually-hidden" for="hero-sf-service">What are you looking for?</label>
+            <label class="stepq" for="hero-sf-service">What do you want to change first?</label>
             <select id="hero-sf-service" name="service" class="stepinput" required>
              <option value="">Select a service...</option>
              <option value="Complete Kitchen Remodel">Complete Kitchen Remodel</option>
@@ -1192,11 +1225,14 @@ html,body{overflow-x:hidden;max-width:100%}
             <label class="visually-hidden" for="hero-sf-email">Email</label>
             <input id="hero-sf-email" name="email" type="email" class="stepinput" required placeholder="Email" autocomplete="email">
             <label class="stepconsent"><input type="checkbox" name="sms_consent"><span>I agree to receive SMS messages from Innov Builders Corp about appointments, estimates and project updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span></label>
-            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Get My Free Estimate</button></div>
+            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Send My Free Estimate Request</button></div>
+            <p class="lp-form-micro">Takes 30 seconds. A real person from our Wakefield office will call you back.</p>
           </div>
           <div class="stepdone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Thank you! We received your request and will contact you shortly.</div>
         </form>
         <a class="lp-form-call" href="tel:+19789193913">Prefer to talk? Call <b>+1 978-919-3913</b></a>
+        <p class="lp-form-proof"><a href="#recent-kitchens" class="lp-proof-link">Recent kitchens in Saugus, North Andover, Billerica and Nahant</a></p>
+        <p class="lp-lic-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>MA HIC #212869</span><span>&middot;</span><span>CSL CS-108151</span><span>&middot;</span><span>Insured up to $1M</span></p>
       </div>
     </div>
   </div>
@@ -1205,12 +1241,60 @@ html,body{overflow-x:hidden;max-width:100%}
 <!-- ============ TRUST STRIP ============ -->
 <div class="trustbar">
   <div class="container trustbar-inner">
-    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6l-8-4z"/></svg> 8+ Years in Business</span>
-    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 3-Year Workmanship Warranty</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6l-8-4z"/></svg> 780+ Remodels in North Boston</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Workmanship Warranty</span>
     <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg> 4.9 Star Rated</span>
     <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg> Free, No-Obligation Estimate</span>
   </div>
 </div>
+
+<!-- ============ LICENSED & INSURED (credibility) ============ -->
+
+<section class="section lp-lic" id="licensed">
+<style>
+.lp-lic-line{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;margin:12px 0 0;font-size:.8rem;line-height:1.4;color:var(--muted);text-align:center}
+.lp-lic-line svg{width:15px;height:15px;color:#B1831C;flex-shrink:0}
+.lic-pending{display:inline-block;padding:0 6px;border:1.5px dashed #c0392b;border-radius:6px;color:#c0392b;background:#fff3f1;font-weight:700}
+.lp-lic{background:#fff;border-top:1px solid #efe6d2;border-bottom:1px solid #efe6d2}
+.lp-lic .section-head{max-width:720px;margin-left:auto;margin-right:auto}
+.lic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.lic-card{background:#FBF6EA;border:1px solid #eadfc6;border-top:3px solid #B1831C;border-radius:14px;padding:22px 20px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.lic-card svg{width:30px;height:30px;color:#B1831C;margin-bottom:4px}
+.lic-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5a10}
+.lic-num{font-family:"Sora","Inter",sans-serif;font-weight:800;font-size:1.3rem;color:#0A0A0A;line-height:1.15}
+.lic-desc{font-size:.88rem;color:#4a4740;line-height:1.5}
+.lic-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 22px;margin-top:28px}
+.lic-foot .lic-call{color:#20201d;text-decoration:none;font-size:.98rem}
+.lic-foot .lic-call b{white-space:nowrap}
+.lic-foot .lic-call:hover b{color:#B1831C}
+.lic-note{text-align:center;font-size:.8rem;color:#6c6a63;margin-top:14px}
+.lic-bbb{display:flex;align-items:center;justify-content:center;margin-top:18px}
+.lic-bbb img{height:64px;width:auto}
+@media(max-width:992px){.lic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.lic-grid{grid-template-columns:1fr;gap:12px}.lic-card{padding:18px 16px}.lic-num{font-size:1.18rem}}
+</style>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Licensed &amp; Insured in Massachusetts</span>
+      <h2>Check our licenses before you let anyone into your home</h2>
+      <p class="lead">Most remodeling horror stories start with an unlicensed contractor. Ours are public records with the Commonwealth of Massachusetts, so you can verify them in two minutes.</p>
+    </div>
+    <div class="lic-grid reveal">
+      <div class="lic-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span class="lic-label">MA Home Improvement Contractor</span><span class="lic-num">HIC #212869</span><span class="lic-desc">Registered with the MA Office of Consumer Affairs, which makes your project eligible for the state Guaranty Fund.</span></div>
+      <div class="lic-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18"/><path d="M5 18v-3a7 7 0 0 1 14 0v3"/><path d="M12 8V5"/><path d="M10 8h4"/></svg><span class="lic-label">MA Construction Supervisor</span><span class="lic-num"><span>CSL CS-108151</span></span><span class="lic-desc">Held by Eduardo Muniz. Massachusetts requires it to supervise structural and permitted building work.</span></div>
+      <div class="lic-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v5"/><circle cx="12" cy="16" r=".6"/></svg><span class="lic-label">General Liability Insurance</span><span class="lic-num">Up to $1M</span><span class="lic-desc">Your home is protected while we work. Certificate of insurance available on request before we start.</span></div>
+      <div class="lic-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="lic-label">Workers' Compensation</span><span class="lic-num">Full crew covered</span><span class="lic-desc">If someone gets hurt on your job site, you are not the one paying for it.</span></div>
+    </div>
+    <!-- BBB-SEAL: descomentar quando a Joanne entregar o selo oficial (img + link do perfil BBB)
+    <div class="lic-bbb reveal"><a href="BBB_PROFILE_URL" target="_blank" rel="noopener"><img src="BBB_SEAL_URL" width="160" height="64" alt="Innov Builders BBB Accredited Business" loading="lazy" decoding="async"></a></div>
+    -->
+    <p class="lic-note">Public records, verifiable on Mass.gov by license number.</p>
+    <div class="lic-foot">
+      <a href="#estimate" class="btn btn--gold js-scroll">Get My Fixed Kitchen Quote</a>
+      <a class="lic-call" href="tel:+19789193913">or call <b>+1 978-919-3913</b></a>
+    </div>
+  </div>
+</section>
 
 <!-- ============ PHOTO GALLERY ============ -->
 <section class="section section--cream">
@@ -1276,7 +1360,7 @@ html,body{overflow-x:hidden;max-width:100%}
       <button type="button" class="btn btn--dark" id="galleryMore">Load more photos</button>
     </div>
     <div class="center" style="margin-top:22px">
-      <a href="#estimate" class="btn btn--gold js-scroll">Book Your Free Consultation</a>
+      <a href="#estimate" class="btn btn--gold js-scroll">Get My Fixed Kitchen Quote</a>
     </div>
   </div>
 </section>
@@ -1288,7 +1372,7 @@ html,body{overflow-x:hidden;max-width:100%}
     <h2 class="reveal">Transform Your Kitchen into the <span class="gold-text">Heart of Your Home</span></h2>
     <p class="lead reveal">We turn ordinary kitchens into stunning, functional spaces designed for the way you live, blending beauty, craftsmanship and smart design.</p>
     <p class="reveal" style="max-width:680px;margin:0 auto 34px;color:var(--muted-light)">Every detail is handled with care, from concept to completion, so your new kitchen not only looks incredible but also makes daily life easier and more enjoyable.</p>
-    <a href="#estimate" class="btn btn--gold js-scroll reveal">Book Your Free Consultation</a>
+    <a href="#estimate" class="btn btn--gold js-scroll reveal">Get My Fixed Kitchen Quote</a>
   </div>
 </section>
 
@@ -1310,7 +1394,7 @@ html,body{overflow-x:hidden;max-width:100%}
       </div>
     </div>
     <div class="center" style="margin-top:38px">
-      <a href="#estimate" class="btn btn--gold js-scroll">Transform Your Kitchen, Contact Us Now</a>
+      <a href="#estimate" class="btn btn--gold js-scroll">Get My Fixed Kitchen Quote</a>
     </div>
   </div>
 </section>
@@ -1329,7 +1413,7 @@ html,body{overflow-x:hidden;max-width:100%}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Smart lighting and electrical solutions</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> From concept to completion, a stress-free process</li>
         </ul>
-        <div style="margin-top:30px"><a href="#estimate" class="btn btn--dark js-scroll">Get Your Free Estimate</a></div>
+        <div style="margin-top:30px"><a href="#estimate" class="btn btn--dark js-scroll">Get My Fixed Kitchen Quote</a></div>
       </div>
       <div class="media-frame reveal">
         <img width="1600" height="1195" src="../assets/img/lp/highlight.webp" alt="Detailed kitchen craftsmanship by Innov Builders" loading="lazy" style="border-radius:var(--radius);box-shadow:var(--shadow);width:100%">
@@ -1340,7 +1424,7 @@ html,body{overflow-x:hidden;max-width:100%}
 </section>
 
 <!-- ============ PROJECTS (portfolio strip) ============ -->
-<section class="section">
+<section class="section" id="recent-kitchens">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow center">Recent Projects</span>
@@ -1356,7 +1440,7 @@ html,body{overflow-x:hidden;max-width:100%}
       <figure data-lb-src="../assets/img/lp/work-06.webp"><img width="1195" height="1600" src="../assets/img/lp/work-06.webp" alt="Luxury Kitchen Transformation" loading="lazy"><figcaption>Luxury Kitchen Transformation<span>Framingham, MA</span></figcaption></figure>
     </div>
     <div class="center" style="margin-top:38px">
-      <a href="#estimate" class="btn btn--dark js-scroll">Start Your Project Today</a>
+      <a href="#estimate" class="btn btn--dark js-scroll">Get My Fixed Kitchen Quote</a>
     </div>
   </div>
 </section>
@@ -1399,7 +1483,7 @@ html,body{overflow-x:hidden;max-width:100%}
         <h2>Every Great Kitchen Starts with a Plan</h2>
         <p class="lead">Every successful kitchen remodel starts with detailed planning. Our expert team maps out layout, electrical and plumbing so your project runs smoothly from start to finish.</p>
         <p style="color:var(--muted)">We handle every detail, giving you the confidence that your dream kitchen will be built exactly as envisioned, on schedule and on budget.</p>
-        <a href="#estimate" class="btn btn--gold js-scroll">Get Your Free Estimate</a>
+        <a href="#estimate" class="btn btn--gold js-scroll">Get My Fixed Kitchen Quote</a>
       </div>
     </div>
   </div>
@@ -1411,12 +1495,12 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="section-head center reveal">
       <span class="eyebrow center">Imagine It</span>
       <h2>Imagine Your Dream Kitchen</h2>
-      <p class="lead">Picture cooking, hosting and living in a kitchen that feels brand new, elegant, practical and built to last. With more than 10 years serving Massachusetts homeowners, our team delivers results that exceed expectations.</p>
+      <p class="lead">Picture cooking, hosting and living in a kitchen that feels brand new, elegant, practical and built to last. Licensed and insured in Massachusetts, our team delivers results that exceed expectations.</p>
       <p class="reveal" style="max-width:680px;margin:0 auto;color:var(--muted-light)">We're not just builders, we're hands that create and transform, combining design expertise with the precision of true craftsmanship.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><b>8+</b><span>years serving Boston</span></div>
-      <div class="stat"><b>14</b><span>years of construction experience</span></div>
+      <div class="stat"><b>780+</b><span>remodels across North Boston</span></div>
+      <div class="stat"><b>12+</b><span>years of construction experience</span></div>
       <div class="stat"><b>50+</b><span>quality indicators, audited monthly</span></div>
       <div class="stat"><b>4.9&#9733;</b><span>rated on Google</span></div>
     </div>
@@ -1439,10 +1523,10 @@ html,body{overflow-x:hidden;max-width:100%}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12+ years of hands-on construction</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Our own trained crew and custom cabinet shop</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Licensed, insured and BSC-certified</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Backed by a 3-year workmanship warranty</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Backed by our workmanship warranty</li>
         </ul>
         <p class="lp-founder-quote">"It would be our pleasure to be part of your next transformation."</p>
-        <a href="#estimate" class="btn btn--gold js-scroll">Start Your Project With Innov</a>
+        <a href="#estimate" class="btn btn--gold js-scroll">Get My Fixed Kitchen Quote</a>
       </div>
     </div>
   </div>
@@ -1525,8 +1609,8 @@ html,body{overflow-x:hidden;max-width:100%}
       <p class="lead">We remove the fear from remodeling, with the licensing, insurance, process and warranty that protect your home and your investment.</p>
     </div>
     <div class="cred-grid reveal">
-      <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><b>Licensed &amp; Insured</b><span>HIC-licensed, up to $1M coverage</span></div>
-      <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M4 4h16v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4z"/></svg><b>3-Year Warranty</b><span>On our workmanship</span></div>
+      <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><b>Licensed &amp; Insured</b><span>MA HIC #212869 · insured up to $1M</span></div>
+      <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M4 4h16v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4z"/></svg><b>Workmanship Warranty</b><span>On every remodel we build</span></div>
       <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><b>BSC Certified</b><span>50+ indicators, audited monthly</span></div>
       <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><b>Our Own Trained Crew</b><span>In-house team, not rotating subs</span></div>
     </div>
@@ -1539,7 +1623,7 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="section-head center reveal">
       <span class="eyebrow center">Get Started</span>
       <h2>Ready to Start Your Project?</h2>
-      <p class="lead">Book your free consultation today and see how we can bring your vision to life. No stress, no guesswork, just flawless results from start to finish.</p>
+      <p class="lead">Get your fixed kitchen quote today and see how we can bring your vision to life. No stress, no guesswork, just flawless results from start to finish.</p>
     </div>
     <div class="reveal" style="max-width:640px;margin:0 auto">
       <form class="stepform lp-stepform" id="contactForm" data-stepform novalidate>
@@ -1549,7 +1633,7 @@ html,body{overflow-x:hidden;max-width:100%}
             <div class="stepdot" data-dot="1"><span class="stepnum">2</span><span class="steplbl">Contact</span></div>
           </div>
           <div class="steppanel" data-step="0">
-            <label class="visually-hidden" for="ct-sf-service">What are you looking for?</label>
+            <label class="stepq" for="ct-sf-service">What do you want to change first?</label>
             <select id="ct-sf-service" name="service" class="stepinput" required>
              <option value="">Select a service...</option>
              <option value="Complete Kitchen Remodel">Complete Kitchen Remodel</option>
@@ -1569,7 +1653,8 @@ html,body{overflow-x:hidden;max-width:100%}
             <label class="visually-hidden" for="ct-sf-email">Email</label>
             <input id="ct-sf-email" name="email" type="email" class="stepinput" required placeholder="Email" autocomplete="email">
             <label class="stepconsent"><input type="checkbox" name="sms_consent"><span>I agree to receive SMS messages from Innov Builders Corp about appointments, estimates and project updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span></label>
-            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Get My Free Estimate</button></div>
+            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Send My Free Estimate Request</button></div>
+            <p class="lp-form-micro">Takes 30 seconds. A real person from our Wakefield office will call you back.</p>
           </div>
           <div class="stepdone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Thank you! We received your request and will contact you shortly.</div>
         </form>
@@ -1584,7 +1669,7 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="footer-top">
       <div class="footer-brand">
         <img loading="lazy" decoding="async" width="356" height="120" src="../assets/img/brand/logo-white-h120.webp" alt="Innov Builders" style="height:48px;width:auto">
-        <p>Transforming kitchens across Wakefield and North Boston with expert craftsmanship, transparency and a 3-year workmanship warranty.</p>
+        <p>Transforming kitchens across Wakefield and North Boston with expert craftsmanship, transparency and a workmanship warranty.</p>
       </div>
       <div class="footer-col">
         <h3>Services</h3>
@@ -1601,7 +1686,7 @@ html,body{overflow-x:hidden;max-width:100%}
           <li>HIC Licensed</li>
           <li>Fully Insured (up to $1M)</li>
           <li>BSC Certified</li>
-          <li>3-Year Warranty</li>
+          <li>Workmanship Warranty</li>
         </ul>
       </div>
       
@@ -1625,6 +1710,12 @@ html,body{overflow-x:hidden;max-width:100%}
   </div>
 </footer>
 
+<!-- ============ BARRA FIXA MOBILE ============ -->
+<div class="lp-mbar" id="mobileBar">
+  <a href="#estimate" class="btn btn--gold lp-mbar-cta">Get My Fixed Kitchen Quote</a>
+  <a href="tel:+19789193913" class="lp-mbar-call" aria-label="Call +1 978-919-3913"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></a>
+</div>
+
 <!-- ============ FLOATING CALL ============ -->
 <button class="lp-callfab" id="callFab" aria-label="Call +1 978-919-3913">
   <span class="fab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></span>
@@ -1632,12 +1723,12 @@ html,body{overflow-x:hidden;max-width:100%}
 </button>
 
 <!-- ============ ESTIMATE POPUP ============ -->
-<div class="qmodal lp-estimate-modal" id="estimateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Get your free estimate">
+<div class="qmodal lp-estimate-modal" id="estimateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Get your fixed kitchen quote">
   <div class="qmodal-backdrop" data-estimate-close></div>
   <div class="lp-estimate-card" role="document">
     <button type="button" class="qmodal-close" data-estimate-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <h3>Get Your Free Estimate</h3>
-    <p class="lp-estimate-sub">Tell us about your project, no pressure, no obligation.</p>
+    <h3>Get Your Fixed Kitchen Quote</h3>
+    <p class="lp-estimate-sub">Tell us what you want to change. We visit, measure and give you one fixed price. No pressure, no obligation.</p>
     <form class="stepform lp-stepform" id="modalForm" data-stepform novalidate>
           <div class="stepbar">
             <div class="stepdot active" data-dot="0"><span class="stepnum">1</span><span class="steplbl">Service</span></div>
@@ -1645,7 +1736,7 @@ html,body{overflow-x:hidden;max-width:100%}
             <div class="stepdot" data-dot="1"><span class="stepnum">2</span><span class="steplbl">Contact</span></div>
           </div>
           <div class="steppanel" data-step="0">
-            <label class="visually-hidden" for="md-sf-service">What are you looking for?</label>
+            <label class="stepq" for="md-sf-service">What do you want to change first?</label>
             <select id="md-sf-service" name="service" class="stepinput" required>
              <option value="">Select a service...</option>
              <option value="Complete Kitchen Remodel">Complete Kitchen Remodel</option>
@@ -1665,7 +1756,8 @@ html,body{overflow-x:hidden;max-width:100%}
             <label class="visually-hidden" for="md-sf-email">Email</label>
             <input id="md-sf-email" name="email" type="email" class="stepinput" required placeholder="Email" autocomplete="email">
             <label class="stepconsent"><input type="checkbox" name="sms_consent"><span>I agree to receive SMS messages from Innov Builders Corp about appointments, estimates and project updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span></label>
-            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Get My Free Estimate</button></div>
+            <div class="stepnav"><button type="button" class="btn btn--dark stepprev">Back</button><button type="submit" class="btn btn--gold">Send My Free Estimate Request</button></div>
+            <p class="lp-form-micro">Takes 30 seconds. A real person from our Wakefield office will call you back.</p>
           </div>
           <div class="stepdone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Thank you! We received your request and will contact you shortly.</div>
         </form>
@@ -1885,10 +1977,13 @@ setTimeout(() => { if (callFab) callFab.classList.add('show'); }, 5000);
 (function(){
   var K='mg_lp_attr', q=new URLSearchParams(location.search), a={};
   try{a=JSON.parse(sessionStorage.getItem(K)||'{}');}catch(e){}
+  if(!a.landing_url){try{var mc=document.cookie.match(/(?:^|; )mg_lp_attr=([^;]*)/);if(mc)a=JSON.parse(decodeURIComponent(mc[1]))||{};}catch(e){}}
   var keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'], tem=false;
-  keys.forEach(function(k){ if(q.get(k)){ a[k]=q.get(k); tem=true; } });
+  keys.forEach(function(k){ if(q.get(k)) tem=true; });
+  if(tem){ keys.forEach(function(k){ if(q.get(k)) a[k]=q.get(k); else delete a[k]; }); }
   if(!a.landing_url || tem){ a.landing_url=location.href; a.referrer=document.referrer||''; }
   try{sessionStorage.setItem(K,JSON.stringify(a));}catch(e){}
+  if(tem){try{document.cookie='mg_lp_attr='+encodeURIComponent(JSON.stringify(a))+'; domain=.innovbuildersusa.com; path=/; max-age=2592000; SameSite=Lax; Secure';}catch(e){}}
   window.mgCallClick=function(botao){
     var d={page_url:location.origin+location.pathname, page_title:document.title, button:botao,
            device:/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?'celular':'computador'};
