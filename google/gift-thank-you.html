@@ -72,9 +72,9 @@ var lc=0;document.addEventListener('click',function(ev){var t=ev.target&&ev.targ
   <div class="ty-card">
     <div class="ty-brand"><img src="../assets/img/brand/logo-white.png" alt="Innov Builders"></div>
     <div class="ty-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-    <span class="eyebrow center">Black Friday Gift</span>
-    <h1>Got it. Your kitchen gift is waiting.</h1>
-    <p class="lead">We'll call you shortly to schedule your free estimate. Sign by Dec 15 and the power tower is yours.</p>
+    <span class="eyebrow center" data-gift-only>Black Friday Gift</span>
+    <h1 id="ty-h1">Got it. Your kitchen gift is waiting.</h1>
+    <p class="lead">We'll call you shortly to schedule your free estimate. <span data-gift-only>Sign your complete remodel by Dec 15 and the power tower is yours.</span></p>
     <p style="color:rgba(255,255,255,.7)">In the meantime, feel free to call us directly, we're happy to answer any questions.</p>
     <div class="ty-actions">
       <a class="btn btn--gold" href="tel:+19789193913">Call (978) 919-3913</a>
@@ -82,5 +82,6 @@ var lc=0;document.addEventListener('click',function(ev){var t=ev.target&&ev.targ
     </div>
   </div>
 </section>
+<script>(function(){if(/[?&]g=0/.test(location.search)){document.querySelectorAll('[data-gift-only]').forEach(function(e){e.remove();});var h=document.getElementById('ty-h1');if(h)h.textContent='Got it. Your request is in.';}})();</script>
 </body>
 </html>
