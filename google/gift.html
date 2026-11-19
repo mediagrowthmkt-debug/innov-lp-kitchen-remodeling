@@ -2125,7 +2125,7 @@ var b=document.getElementById('mg-promo-bar');if(b&&!q&&t>=e)b.hidden=true;})();
 document.querySelectorAll('form[data-stepform] .steppanel[data-step="0"] select.stepinput').forEach(function(sel){
   var panel=sel.closest('.steppanel'),wrap=document.createElement('div');wrap.className='mg-opts';
   [].forEach.call(sel.options,function(o){if(!o.value)return;var b=document.createElement('button');b.type='button';b.className='mg-opt';b.textContent=o.getAttribute('data-label')||o.textContent;if(o.hasAttribute('data-gift')){b.classList.add('mg-opt-gift');var tg=document.createElement('span');tg.className='mg-gift-tag';tg.textContent=o.getAttribute('data-gift');b.appendChild(tg);}
-    b.addEventListener('click',function(){sel.value=o.value;wrap.querySelectorAll('.mg-opt').forEach(function(x){x.classList.toggle('on',x===b);});var n=panel.querySelector('.stepnext');setTimeout(function(){if(n)n.click();},160);});
+    b.addEventListener('click',function(){sel.value=o.value;var sb=panel.closest('form').querySelector('button[type="submit"]');if(sb){sb.textContent=o.hasAttribute('data-gift')?'Claim my gift':'Get my free estimate';}wrap.querySelectorAll('.mg-opt').forEach(function(x){x.classList.toggle('on',x===b);});var n=panel.querySelector('.stepnext');setTimeout(function(){if(n)n.click();},160);});
     wrap.appendChild(b);});
   sel.classList.add('mg-sel');sel.setAttribute('tabindex','-1');sel.insertAdjacentElement('afterend',wrap);
   var nav=panel.querySelector('.stepnav');if(nav)nav.classList.add('mg-nav-auto');
