@@ -65,6 +65,7 @@
   /* ---------------- lightbox (self-contained) ---------------- */
   var GROUPS = [];           // photo groups for the current view
   function grp(photos) { GROUPS.push(photos.slice()); return GROUPS.length - 1; }
+  function pfss(u) { return /-800\.webp$/.test(u || '') ? ' srcset="' + esc(u.replace(/-800\.webp$/, '-480.webp')) + ' 480w, ' + esc(u) + ' 800w" sizes="(max-width:560px) 92vw, 400px"' : ''; }
   function shot(gi, i, src, cls) {
     if (src && typeof src === 'object' && src.video) {
       return '<button class="pf2-shot is-video ' + (cls || '') + '" data-g="' + gi + '" data-i="' + i + '" aria-label="Play video">' +
@@ -144,7 +145,7 @@
     GROUPS = [];
     var cards = CATS.map(function (c) {
       return '<a class="pf2-cat" href="#/s/' + c.slug + '">' +
-        '<div class="pf2-cat-media"><img src="' + esc(c.cover) + '" loading="lazy" alt="' + esc(c.title) + ' projects by Innov Builders"></div>' +
+        '<div class="pf2-cat-media"><img src="' + esc(c.cover) + '"' + pfss(c.cover) + ' loading="lazy" alt="' + esc(c.title) + ' projects by Innov Builders"></div>' +
         '<div class="pf2-cat-body"><span class="pf2-cat-ico">' + icon(c.icon) + '</span>' +
         '<h3>' + esc(c.title) + '</h3><p>' + esc(c.tag) + '</p>' +
         '<span class="pf2-cat-count">' + c.count + ' project' + (c.count === 1 ? '' : 's') + ' ' + ARROW + '</span></div></a>';
@@ -169,7 +170,7 @@
         ? '<span class="pf2-kind proc">' + p.stages.filter(function (s) { return s.photos && s.photos.length; }).map(function (s) { return esc(s.label || s.key); }).join(' · ') + '</span>'
         : '<span class="pf2-kind">Finished result</span>';
       return '<a class="pf2-proj" data-region="' + esc(p.city) + '" href="#/s/' + c.slug + '/p/' + p.slug + '">' +
-        '<div class="pf2-proj-media"><img src="' + esc(p.cover) + '" loading="lazy" alt="' + esc(p.name) + ' in ' + esc(p.city) + '">' +
+        '<div class="pf2-proj-media"><img src="' + esc(p.cover) + '"' + pfss(p.cover) + ' loading="lazy" alt="' + esc(p.name) + ' in ' + esc(p.city) + '">' +
         '<span class="pf2-badge">' + esc(p.city) + '</span>' + kind + '</div>' +
         '<div class="pf2-proj-body"><h3>' + esc(p.name) + '</h3><p>' + esc(p.summary) + '</p>' +
         '<span class="pf2-link">See the project ' + ARROW + '</span></div></a>';
