@@ -4,10 +4,13 @@
    Level 3: Project detail - Before / During / After, focused on the final result
    Data-driven from <script id="pf-data">. Self-contained: does not depend on main.js. */
 (function () {
-  var dataEl = document.getElementById('pf-data');
-  var app = document.getElementById('pf-app');
-  var SEC = document.getElementById('lp-portfolio') || document.body;
-  var ROUTE = window.__pfGo || '/', SCROLL = false;
+function mgPfInit(o) {
+  o = o || {};
+  var dataEl = o.dataEl || document.getElementById('pf-data');
+  var app = o.app || document.getElementById('pf-app');
+  var SEC = o.sec || document.getElementById('lp-portfolio') || document.body;
+  var SCROLLER = o.scroller || null;
+  var ROUTE = o.route || window.__pfGo || '/', SCROLL = false;
   if (!dataEl || !app) return;
   // Resolve caminhos absolutos ("/assets/..") do JSON para a base real onde o site
   // esta montado (raiz OU subpath do GitHub Pages), derivada do proprio <script>.
@@ -26,6 +29,21 @@
   var CATS = DATA.cats || [];
   var BYCAT = {};
   CATS.forEach(function (c) { BYCAT[c.slug] = c; });
+  /* Modo travado (LP de 1 servico): so os projetos daquele servico, sem grade de categorias.
+     o.only = ['kitchen'] ou ['deck', 'porch', 'stair-remodeling:slug1,slug2'] */
+  var LOCK = null;
+  if (o.only && o.only.length) {
+    var vp = [];
+    o.only.forEach(function (k) {
+      var kp = String(k).split(':'), c = BYCAT[kp[0]]; if (!c) return;
+      var pick = kp[1] ? kp[1].split(',') : null;
+      c.projects.forEach(function (p) { if (!pick || pick.indexOf(p.slug) >= 0) vp.push(p); });
+    });
+    if (vp.length) {
+      LOCK = { slug: 'lp', title: o.title || (BYCAT[o.only[0]] || {}).title || 'Projects', tag: o.tag || '', icon: 'home', count: vp.length, projects: vp, cover: vp[0].cover };
+      CATS = [LOCK]; BYCAT = { lp: LOCK };
+    }
+  }
 
   var ICONS = {
     kitchen: '<path d="M3 10 12 3l9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/>',
@@ -48,6 +66,7 @@
   /* Sticky navigation bar: prominent back button + breadcrumb (+ optional project stepper).
      Always visible on service/project views so navigation is one tap away on mobile and desktop. */
   function navBar(o) {
+    if (LOCK) o.crumb = String(o.crumb).replace(/^<a href="#\/">Portfolio<\/a><span>›<\/span>/, '');
     var back = o.backHref != null
       ? '<a class="pf2-nav-back" href="' + o.backHref + '">' + CHEV_L + '<span>' + esc(o.backLabel) + '</span></a>'
       : '';
@@ -138,10 +157,15 @@
     app.innerHTML = html;
     SEC.setAttribute('data-pf', level || 'home');
     wireShots();
-    if (SCROLL) { SCROLL = false; window.scrollTo({ top: SEC.getBoundingClientRect().top + window.scrollY - (window.innerWidth < 900 ? 70 : 86), behavior: 'auto' }); }
+    if (SCROLL) {
+      SCROLL = false;
+      if (SCROLLER) SCROLLER.scrollTop = Math.max(0, SEC.getBoundingClientRect().top - SCROLLER.getBoundingClientRect().top + SCROLLER.scrollTop - (o.offset || 0));
+      else window.scrollTo({ top: SEC.getBoundingClientRect().top + window.scrollY - (window.innerWidth < 900 ? 70 : 86), behavior: 'auto' });
+    }
   }
 
   function viewHome() {
+    if (LOCK) return viewCategory(LOCK.slug);
     GROUPS = [];
     var cards = CATS.map(function (c) {
       return '<a class="pf2-cat" href="#/s/' + c.slug + '">' +
@@ -176,18 +200,18 @@
         '<span class="pf2-link">See the project ' + ARROW + '</span></div></a>';
     }).join('');
     paint(
-      navBar({
+      (LOCK ? '' : navBar({
         backHref: '#/', backLabel: 'All services',
         crumb: '<a href="#/">Portfolio</a><span>›</span><b>' + esc(c.title) + '</b>'
       }) +
       '<div class="pf2-lead left"><div class="eyebrow">' + c.count + ' projects</div>' +
-      '<h2>' + esc(c.title) + '</h2><p class="lead">' + esc(c.tag) + '. Choose a project by region to see how it was done.</p></div>' +
+      '<h2>' + esc(c.title) + '</h2><p class="lead">' + esc(c.tag) + '. Choose a project by region to see how it was done.</p></div>') +
       '<div class="pf2-chips">' + chips + '</div>' +
       '<div class="pf2-grid">' + grid + '</div>' +
-      '<div class="pf2-backrow"><a class="pf2-back" href="#/">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> All services</a></div>',
+      (LOCK ? '' : '<div class="pf2-backrow"><a class="pf2-back" href="#/">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> All services</a></div>'),
       c.title + ' Portfolio | Innov Builders',
-      'cat'
+      LOCK ? 'home' : 'cat'
     );
     // region filter (client-side, no hash change)
     var chipEls = app.querySelectorAll('.pf2-chip');
@@ -314,6 +338,11 @@
     if (!a || !app.contains(a)) return;
     e.preventDefault(); ROUTE = a.getAttribute('href').slice(1); SCROLL = true; render();
   });
-  window.mgPfGo = function (r) { ROUTE = r || '/'; render(); };
+  var go = function (r) { ROUTE = r || '/'; render(); };
+  if (!o.noGlobal) window.mgPfGo = go;
   render();
+  return { go: go };
+}
+window.mgPfInit = mgPfInit;
+if (!window.__pfManual) mgPfInit(window.__pfOpts || {});
 })();
