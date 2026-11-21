@@ -2279,9 +2279,9 @@ setTimeout(() => { if (callFab) callFab.classList.add('show'); }, 5000);
 })();
 </script>
 <script id="mg-bf-js">
-/* Fase 1 Black Friday até 30/11; Fase 2 Holiday automática a partir de 01/12 (horário de Boston). Teste: ?promo=holiday | ?promo=bf */
+/* Fase 1 Black Friday até 15/12 (Eduardo 21-11: sem Holiday automático). Teste: ?promo=holiday | ?promo=bf */
 (function(){var q=(location.search.match(/[?&]promo=(bf|holiday)/)||[])[1];var t=Date.now(),h=Date.UTC(2026,11,1,5),e=Date.UTC(2026,11,16,5);
-var p=q?(q==='holiday'?2:1):(t<h?1:2);
+var p=q?(q==='holiday'?2:1):(t<e?1:2);
 if(p===2){document.querySelectorAll('[data-p2]').forEach(function(el){el.innerHTML=el.getAttribute('data-p2');});document.documentElement.classList.add('mg-phase2');}
 var b=document.getElementById('mg-promo-bar');if(b&&!q&&t>=e)b.hidden=true;})();
 /* Formulário passo a passo: opções em botões que avançam sozinhos (o select original continua com o mesmo name) */
